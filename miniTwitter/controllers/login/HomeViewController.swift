@@ -31,7 +31,7 @@ extension HomeViewController: HomeViewModelDelegate {
         let feedViewModel = FeedViewModel()
         feedViewModel.apiManager = viewModel?.apiManager
         feedViewController.viewModel = feedViewModel
-        navigationController?.pushViewController(feedViewController, animated: true)
+        navigationController?.setViewControllers([feedViewController], animated: true)
     }
     
     func failedToFetchAccessToken(error: Error) {

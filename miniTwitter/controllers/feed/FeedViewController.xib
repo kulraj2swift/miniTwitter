@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="miniTwitter" customModuleProvider="target">
             <connections>
+                <outlet property="logoutIcon" destination="Luy-TV-flu" id="onT-4k-pcj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,13 +26,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-TV-flu">
+                    <rect key="frame" x="329" y="80" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="5kL-5M-1tV"/>
+                        <constraint firstAttribute="width" constant="44" id="UED-M4-MuV"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="7" y="-11"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Luy-TV-flu" secondAttribute="trailing" constant="20" id="gJA-tu-9X2"/>
+                <constraint firstItem="Luy-TV-flu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="qe0-WJ-FqW"/>
+            </constraints>
+            <point key="canvasLocation" x="6.8702290076335872" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
+        <image name="logoutIcon" width="593" height="706"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -52,4 +52,12 @@ class KeyChain {
         let swiftString: String = cfStr as String
         return swiftString
     }
+    
+    class func clear(key: String) {
+        let query = [
+            kSecClass as String       : kSecClassGenericPassword as String,
+            kSecAttrAccount as String : key] as [String : Any]
+
+        SecItemDelete(query as CFDictionary)
+    }
 }

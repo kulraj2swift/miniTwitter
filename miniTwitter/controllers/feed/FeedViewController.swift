@@ -7,14 +7,14 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: BaseViewController {
 
     var viewModel: FeedViewModel?
+    @IBOutlet weak var logoutIcon: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        logoutIcon.addTapGesture(target: self, selector: #selector(showLogoutConfirmation))
     }
 
 }
