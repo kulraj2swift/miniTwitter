@@ -1,19 +1,20 @@
 //
-//  ViewController.swift
+//  FeedViewController.swift
 //  miniTwitter
 //
-//  Created by kulraj singh on 18/01/23.
+//  Created by kulraj singh on 19/01/23.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
+
+    var viewModel: FeedViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-

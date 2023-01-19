@@ -1,2 +1,6 @@
 Podfile.lock
 Pods/
+ApiKeys.swift
+.DS_Store
+miniTwitter.xcodeproj/xcuserdata/kulrajsingh.xcuserdatad/xcdebugger/
+miniTwitter.xcworkspace/
