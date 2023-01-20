@@ -10,7 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController" customModule="miniTwitter" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="kWy-au-KoY" id="88X-LS-Bxs"/>
+                <outlet property="createPostButton" destination="jPv-HN-8J4" id="akA-zu-9Gu"/>
                 <outlet property="logoutIcon" destination="Luy-TV-flu" id="onT-4k-pcj"/>
+                <outlet property="noPostsLabel" destination="n1h-wT-2zP" id="g0V-NT-3V9"/>
+                <outlet property="plusButton" destination="sJR-us-wbs" id="dov-Ov-9IS"/>
+                <outlet property="postsTable" destination="MLn-4o-ehC" id="O3n-q1-laV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,10 +24,17 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1h-wT-2zP">
-                    <rect key="frame" x="175" y="422" width="38" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MLn-4o-ehC">
+                    <rect key="frame" x="0.0" y="124" width="393" height="728"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FoN-fY-6WS"/>
+                        <outlet property="delegate" destination="-1" id="BR9-j0-0Oe"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whoops! you do not have any posts yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1h-wT-2zP">
+                    <rect key="frame" x="20" y="414" width="353" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -33,11 +45,69 @@
                         <constraint firstAttribute="width" constant="44" id="UED-M4-MuV"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPv-HN-8J4" customClass="CustomButton" customModule="miniTwitter" customModuleProvider="target">
+                    <rect key="frame" x="20" y="458" width="373" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Pra-k6-WVZ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Create a post"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="createPostClicked:" destination="-1" eventType="touchUpInside" id="ZG7-Qm-ATX"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-au-KoY">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJR-us-wbs">
+                    <rect key="frame" x="302" y="752" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="RgR-ph-JOn"/>
+                        <constraint firstAttribute="width" constant="60" id="iys-7m-NDO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="+">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="53"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" systemColor="linkColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="createPostClicked:" destination="-1" eventType="touchUpInside" id="fTi-r8-h8R"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="MLn-4o-ehC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Uu-J6-J7K"/>
+                <constraint firstItem="kWy-au-KoY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3f1-9A-w0w"/>
+                <constraint firstItem="MLn-4o-ehC" firstAttribute="top" secondItem="Luy-TV-flu" secondAttribute="bottom" id="8fd-tA-NRu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MLn-4o-ehC" secondAttribute="trailing" id="Ck2-Gz-z4A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jPv-HN-8J4" secondAttribute="trailing" id="IGp-A1-9Pk"/>
+                <constraint firstItem="jPv-HN-8J4" firstAttribute="top" secondItem="n1h-wT-2zP" secondAttribute="bottom" constant="20" id="KgF-Q1-Gxu"/>
+                <constraint firstAttribute="bottom" secondItem="sJR-us-wbs" secondAttribute="bottom" constant="40" id="LdC-LS-cAD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sJR-us-wbs" secondAttribute="trailing" constant="31" id="Qsb-ri-ee4"/>
+                <constraint firstAttribute="bottom" secondItem="MLn-4o-ehC" secondAttribute="bottom" id="UXe-u1-TWf"/>
+                <constraint firstItem="n1h-wT-2zP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WDJ-GC-acA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n1h-wT-2zP" secondAttribute="trailing" constant="20" id="aDs-tC-qdS"/>
+                <constraint firstItem="jPv-HN-8J4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fZN-Pq-RKy"/>
+                <constraint firstItem="n1h-wT-2zP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fhb-mN-8ih"/>
                 <constraint firstAttribute="trailing" secondItem="Luy-TV-flu" secondAttribute="trailing" constant="20" id="gJA-tu-9X2"/>
+                <constraint firstItem="kWy-au-KoY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="n5u-6g-fuj"/>
                 <constraint firstItem="Luy-TV-flu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="qe0-WJ-FqW"/>
             </constraints>
             <point key="canvasLocation" x="6.8702290076335872" y="-11.267605633802818"/>
@@ -45,6 +115,9 @@
     </objects>
     <resources>
         <image name="logoutIcon" width="593" height="706"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

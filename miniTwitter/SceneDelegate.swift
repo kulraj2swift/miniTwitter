@@ -7,6 +7,7 @@
 
 import UIKit
 import OAuthSwift
+import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,8 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         var rootViewController: UIViewController!
         
-        let accessToken = KeyChain.load(key: KeyChainKeys.accessToken)
-        let accessTokenSecret = KeyChain.load(key: KeyChainKeys.accessTokenSecret)
+        let keychain = KeychainSwift()
+        let accessToken = keychain.get(KeyChainKeys.accessToken)
+        let accessTokenSecret = keychain.get(KeyChainKeys.accessTokenSecret)
         if accessToken != nil,
            accessTokenSecret != nil {
             let feedViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)

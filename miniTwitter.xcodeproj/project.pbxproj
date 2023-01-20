@@ -33,6 +33,11 @@
 		2B53BE3B2979479000B43A7F /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B53BE392979479000B43A7F /* FeedViewController.xib */; };
 		2B53BE3D2979479E00B43A7F /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53BE3C2979479E00B43A7F /* FeedViewModel.swift */; };
 		2B53BE3F297950F300B43A7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53BE3E297950F300B43A7F /* BaseViewController.swift */; };
+		2BFC012B297AA6BA005A64EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012A297AA6BA005A64EF /* User.swift */; };
+		2BFC012D297AB6EF005A64EF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012C297AB6EF005A64EF /* Tweet.swift */; };
+		2BFC0130297AD298005A64EF /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012E297AD298005A64EF /* FeedTableViewCell.swift */; };
+		2BFC0131297AD298005A64EF /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BFC012F297AD298005A64EF /* FeedTableViewCell.xib */; };
+		2BFC0133297AE27E005A64EF /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC0132297AE27E005A64EF /* UIImageView+extension.swift */; };
 		B43B5DDECF98DD0DE548A9C0 /* Pods_miniTwitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1C7434583BFDAB03E928EA /* Pods_miniTwitterTests.framework */; };
 		D0D9C09E0EFA34EFDFD5A924 /* Pods_miniTwitter_miniTwitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C7F9B96FA51D62991C73C7 /* Pods_miniTwitter_miniTwitterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +89,11 @@
 		2B53BE392979479000B43A7F /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		2B53BE3C2979479E00B43A7F /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		2B53BE3E297950F300B43A7F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2BFC012A297AA6BA005A64EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2BFC012C297AB6EF005A64EF /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		2BFC012E297AD298005A64EF /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		2BFC012F297AD298005A64EF /* FeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		2BFC0132297AE27E005A64EF /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		2D1C7434583BFDAB03E928EA /* Pods_miniTwitterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniTwitterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B11A80627AE57C186843DFD /* Pods-miniTwitter-miniTwitterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniTwitter-miniTwitterUITests.debug.xcconfig"; path = "Target Support Files/Pods-miniTwitter-miniTwitterUITests/Pods-miniTwitter-miniTwitterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		61F7DB0742D6A81F3CA0BB9C /* Pods_miniTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +160,7 @@
 			children = (
 				2B53BDE62977F36800B43A7F /* AppDelegate.swift */,
 				2B53BDE82977F36800B43A7F /* SceneDelegate.swift */,
+				2BFC0129297AA6AA005A64EF /* models */,
 				2B53BE282978ED0C00B43A7F /* api */,
 				2B53BE212978317A00B43A7F /* customClasses */,
 				2B53BE1C2978310700B43A7F /* extensions */,
@@ -206,6 +217,7 @@
 				2B53BE24297831D100B43A7F /* UIColor+extension.swift */,
 				2B53BE33297942FC00B43A7F /* Data+extension.swift */,
 				2B53BE35297945AA00B43A7F /* UiAlertController+extension.swift */,
+				2BFC0132297AE27E005A64EF /* UIImageView+extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -236,8 +248,19 @@
 				2B53BE382979479000B43A7F /* FeedViewController.swift */,
 				2B53BE392979479000B43A7F /* FeedViewController.xib */,
 				2B53BE3C2979479E00B43A7F /* FeedViewModel.swift */,
+				2BFC012E297AD298005A64EF /* FeedTableViewCell.swift */,
+				2BFC012F297AD298005A64EF /* FeedTableViewCell.xib */,
 			);
 			path = feed;
+			sourceTree = "<group>";
+		};
+		2BFC0129297AA6AA005A64EF /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2BFC012A297AA6BA005A64EF /* User.swift */,
+				2BFC012C297AB6EF005A64EF /* Tweet.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		551E6161CCADD770E8BFBF67 /* Pods */ = {
@@ -373,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B53BDF32977F36900B43A7F /* LaunchScreen.storyboard in Resources */,
+				2BFC0131297AD298005A64EF /* FeedTableViewCell.xib in Resources */,
 				2B53BDF02977F36900B43A7F /* Assets.xcassets in Resources */,
 				2B53BE3B2979479000B43A7F /* FeedViewController.xib in Resources */,
 				2B53BE1B2977F7A300B43A7F /* HomeViewController.xib in Resources */,
@@ -514,13 +538,17 @@
 				2B53BE3A2979479000B43A7F /* FeedViewController.swift in Sources */,
 				2B53BE2E2978F6C600B43A7F /* ApiManager+request.swift in Sources */,
 				2B53BE25297831D100B43A7F /* UIColor+extension.swift in Sources */,
+				2BFC012D297AB6EF005A64EF /* Tweet.swift in Sources */,
 				2B53BE36297945AA00B43A7F /* UiAlertController+extension.swift in Sources */,
 				2B53BE302979397200B43A7F /* HomeViewModel.swift in Sources */,
 				2B53BE1F2978312600B43A7F /* UITextField+extension.swift in Sources */,
 				2B53BDE92977F36800B43A7F /* SceneDelegate.swift in Sources */,
+				2BFC0130297AD298005A64EF /* FeedTableViewCell.swift in Sources */,
 				2B53BE272978EBF700B43A7F /* ApiKeys.swift in Sources */,
 				2B53BE1A2977F7A300B43A7F /* HomeViewController.swift in Sources */,
 				2B53BE322979420500B43A7F /* KeyChain.swift in Sources */,
+				2BFC0133297AE27E005A64EF /* UIImageView+extension.swift in Sources */,
+				2BFC012B297AA6BA005A64EF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

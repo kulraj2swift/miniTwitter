@@ -7,7 +7,7 @@ target 'miniTwitter' do
 
   # Pods for miniTwitter
   pod 'OAuthSwift'
-  pod 'OhhAuth'
+  pod 'KeychainSwift'
 
   target 'miniTwitterTests' do
     inherit! :search_paths

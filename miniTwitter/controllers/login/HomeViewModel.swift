@@ -7,8 +7,7 @@
 
 import Foundation
 import OAuthSwift
-import Security
-
+import KeychainSwift
 protocol HomeViewModelDelegate: AnyObject {
     func accessTokenFetched()
     func failedToFetchAccessToken(error: Error)
@@ -33,18 +32,26 @@ class HomeViewModel {
     }
     
     private func credentialFetched(_ credential: OAuthSwiftCredential) {
+        let keyChain = KeychainSwift()
+        keyChain.set(credential.oauthToken, forKey: KeyChainKeys.accessToken)
+        keyChain.set(credential.oauthTokenSecret, forKey: KeyChainKeys.accessTokenSecret)
+        keyChain.set(credential.oauthVerifier, forKey: KeyChainKeys.accessTokenVerifier)
+        
         DispatchQueue.main.async { [weak self] in
-            let isTokenSaved = KeyChain.save(key: KeyChainKeys.accessToken, data: Data.init(value: credential.oauthToken))
-            let isSecretSaved = KeyChain.save(key: KeyChainKeys.accessTokenSecret, data: Data.init(value: credential.oauthTokenSecret))
-            let isVerifierSaved = KeyChain.save(key: KeyChainKeys.accessTokenVerifier, data: Data.init(value: credential.oauthVerifier))
-            if isTokenSaved == noErr,
-               isSecretSaved == noErr,
-               isVerifierSaved == noErr {
-                self?.delegate?.accessTokenFetched()
-            } else {
-                let saveError = NSError(domain: "error in saving to keychain", code: 200)
-                self?.delegate?.failedToFetchAccessToken(error: saveError)
-            }
+            
+            self?.delegate?.accessTokenFetched()
+            
+//            let isTokenSaved = KeyChain.save(key: KeyChainKeys.accessToken, data: Data.init(value: credential.oauthToken))
+//            let isSecretSaved = KeyChain.save(key: KeyChainKeys.accessTokenSecret, data: Data.init(value: credential.oauthTokenSecret))
+//            let isVerifierSaved = KeyChain.save(key: KeyChainKeys.accessTokenVerifier, data: Data.init(value: credential.oauthVerifier))
+//            if isTokenSaved == noErr,
+//               isSecretSaved == noErr,
+//               isVerifierSaved == noErr {
+//                self?.delegate?.accessTokenFetched()
+//            } else {
+//                let saveError = NSError(domain: "error in saving to keychain", code: 200)
+//                self?.delegate?.failedToFetchAccessToken(error: saveError)
+//            }
         }
     }
 }

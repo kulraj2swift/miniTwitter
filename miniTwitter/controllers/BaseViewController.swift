@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class BaseViewController: UIViewController {
 
@@ -37,9 +38,10 @@ class BaseViewController: UIViewController {
     }
     
     func logout() {
-        KeyChain.clear(key: KeyChainKeys.accessToken)
-        KeyChain.clear(key: KeyChainKeys.accessTokenSecret)
-        KeyChain.clear(key: KeyChainKeys.accessTokenVerifier)
+        let keychain = KeychainSwift()
+        keychain.delete(KeyChainKeys.accessToken)
+        keychain.delete(KeyChainKeys.accessTokenSecret)
+        keychain.delete(KeyChainKeys.accessTokenVerifier)
         
         //show login screen
         let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)

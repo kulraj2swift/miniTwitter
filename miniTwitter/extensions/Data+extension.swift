@@ -20,4 +20,16 @@ extension Data {
             append(UnsafeBufferPointer(start: ptr, count: 1))
         }
     }
+    
+    func to<T>(type: T.Type) -> T {
+        return withUnsafeBytes {
+            $0.load(as: T.self)
+        }
+    }
+    
+    func toString() -> String {
+        return withUnsafeBytes {
+            String(bytes: $0, encoding: .utf8) ?? ""
+        }
+    }
 }
