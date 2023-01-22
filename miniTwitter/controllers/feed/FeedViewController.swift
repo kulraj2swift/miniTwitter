@@ -15,7 +15,7 @@ class FeedViewController: BaseViewController {
     }
     
     var viewModel: FeedViewModel?
-    @IBOutlet weak var logoutIcon: UIImageView!
+
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noPostsLabel: UILabel!
     @IBOutlet weak var createPostButton: UIButton!
@@ -25,10 +25,10 @@ class FeedViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.delegate = self
-        logoutIcon.addTapGesture(target: self, selector: #selector(showLogoutConfirmation))
         viewModel?.initializeClient()
         activityIndicator.startAnimating()
         viewModel?.getMyDetails()
+        navigationItem.title = "My Posts"
         hideAll()
         registerCells()
     }
@@ -46,7 +46,14 @@ class FeedViewController: BaseViewController {
     }
     
     @IBAction func createPostClicked(_ sender: Any) {
-        //go to next screen
+        let createPostViewController = CreatePostViewController(nibName: "CreatePostViewController", bundle: nil)
+        let createPostViewModel = CreatePostViewModel()
+        createPostViewModel.apiManager = viewModel?.apiManager
+        createPostViewController.viewModel = createPostViewModel
+        createPostViewController.onSuccessfulPost = { [weak self] in
+            self?.viewModel?.getTimeline()
+        }
+        navigationController?.pushViewController(createPostViewController, animated: true)
     }
 
 }

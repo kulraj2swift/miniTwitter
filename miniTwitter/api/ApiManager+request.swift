@@ -7,6 +7,7 @@
 
 import Foundation
 import KeychainSwift
+import OAuthSwift
 
 extension APIManager {
     
@@ -15,6 +16,11 @@ extension APIManager {
         static let oauthSecret = "oauth_token_secret"
         static let oauthConsumerKey = "oauth_consumer_key"
         static let oauthConsumerSecret = "oauth_consumer_secret"
+        static let oauthTimestamp = "oauth_timestamp"
+        static let oauthNonce = "oauth_nonce"
+        static let oauthSignatureMethod = "oauth_signature_method"
+        static let oauthSignature = "oauth_signature"
+        static let oauthVersion = "oauth_version"
     }
     
     struct ResponseKeys {
@@ -43,11 +49,19 @@ extension APIManager {
         if let accessToken = keychain.get(KeyChainKeys.accessToken)  {
             headers[RequestKeys.oauthToken] = accessToken
         }
-        if let accessSecret = keychain.get(KeyChainKeys.accessTokenSecret) {
-            headers[RequestKeys.oauthSecret] = accessSecret
-        }
+//        if let accessSecret = keychain.get(KeyChainKeys.accessTokenSecret) {
+//            headers[RequestKeys.oauthSecret] = accessSecret
+//        }
         headers[RequestKeys.oauthConsumerKey] = ApiKeys.devApiKey
-        headers[RequestKeys.oauthConsumerSecret] = ApiKeys.devApiSecret
+        //headers[RequestKeys.oauthConsumerSecret] = ApiKeys.devApiSecret
+        
+        let timestamp = String(Int64(Date().timeIntervalSince1970))
+        headers[RequestKeys.oauthTimestamp] = timestamp
+        let nonce = OAuthSwiftCredential.generateNonce()
+        headers[RequestKeys.oauthNonce] = nonce
+        headers[RequestKeys.oauthSignatureMethod] = Keys.signatureMethod
+        headers[RequestKeys.oauthVersion] = "1.0"
+
         return headers
     }
     

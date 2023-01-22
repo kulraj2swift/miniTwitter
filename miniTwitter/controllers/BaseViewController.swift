@@ -13,13 +13,18 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addRightBarButtonForLogout()
-        // Do any additional setup after loading the view.
     }
     
     func addRightBarButtonForLogout() {
         let image = UIImage(named: "logoutIcon.pdf")
-        let barButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showLogoutConfirmation))
-        navigationController?.navigationItem.rightBarButtonItem = barButton
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(origin: .zero, size: CGSize(width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        imageView.addTapGesture(target: self, selector: #selector(showLogoutConfirmation))
+        let containerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 40, height: 40)))
+        containerView.addSubview(imageView)
+        let barButton = UIBarButtonItem(customView: containerView)
+        navigationItem.rightBarButtonItem = barButton
     }
     
     @objc func showLogoutConfirmation(_ sender: Any) {

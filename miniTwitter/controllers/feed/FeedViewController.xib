@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="activityIndicator" destination="kWy-au-KoY" id="88X-LS-Bxs"/>
                 <outlet property="createPostButton" destination="jPv-HN-8J4" id="akA-zu-9Gu"/>
-                <outlet property="logoutIcon" destination="Luy-TV-flu" id="onT-4k-pcj"/>
                 <outlet property="noPostsLabel" destination="n1h-wT-2zP" id="g0V-NT-3V9"/>
                 <outlet property="plusButton" destination="sJR-us-wbs" id="dov-Ov-9IS"/>
                 <outlet property="postsTable" destination="MLn-4o-ehC" id="O3n-q1-laV"/>
@@ -25,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MLn-4o-ehC">
-                    <rect key="frame" x="0.0" y="124" width="393" height="728"/>
+                    <rect key="frame" x="0.0" y="79" width="393" height="773"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="FoN-fY-6WS"/>
@@ -38,23 +37,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Luy-TV-flu">
-                    <rect key="frame" x="329" y="80" width="44" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="5kL-5M-1tV"/>
-                        <constraint firstAttribute="width" constant="44" id="UED-M4-MuV"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPv-HN-8J4" customClass="CustomButton" customModule="miniTwitter" customModuleProvider="target">
-                    <rect key="frame" x="20" y="458" width="373" height="40"/>
+                    <rect key="frame" x="20" y="458" width="353" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Pra-k6-WVZ"/>
+                        <constraint firstAttribute="height" constant="50" id="Pra-k6-WVZ"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Create a post"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="20"/>
+                            <real key="value" value="25"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -95,9 +87,8 @@
             <constraints>
                 <constraint firstItem="MLn-4o-ehC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3Uu-J6-J7K"/>
                 <constraint firstItem="kWy-au-KoY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3f1-9A-w0w"/>
-                <constraint firstItem="MLn-4o-ehC" firstAttribute="top" secondItem="Luy-TV-flu" secondAttribute="bottom" id="8fd-tA-NRu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MLn-4o-ehC" secondAttribute="trailing" id="Ck2-Gz-z4A"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jPv-HN-8J4" secondAttribute="trailing" id="IGp-A1-9Pk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jPv-HN-8J4" secondAttribute="trailing" constant="20" id="IGp-A1-9Pk"/>
                 <constraint firstItem="jPv-HN-8J4" firstAttribute="top" secondItem="n1h-wT-2zP" secondAttribute="bottom" constant="20" id="KgF-Q1-Gxu"/>
                 <constraint firstAttribute="bottom" secondItem="sJR-us-wbs" secondAttribute="bottom" constant="40" id="LdC-LS-cAD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sJR-us-wbs" secondAttribute="trailing" constant="31" id="Qsb-ri-ee4"/>
@@ -106,15 +97,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n1h-wT-2zP" secondAttribute="trailing" constant="20" id="aDs-tC-qdS"/>
                 <constraint firstItem="jPv-HN-8J4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fZN-Pq-RKy"/>
                 <constraint firstItem="n1h-wT-2zP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fhb-mN-8ih"/>
-                <constraint firstAttribute="trailing" secondItem="Luy-TV-flu" secondAttribute="trailing" constant="20" id="gJA-tu-9X2"/>
                 <constraint firstItem="kWy-au-KoY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="n5u-6g-fuj"/>
-                <constraint firstItem="Luy-TV-flu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="qe0-WJ-FqW"/>
+                <constraint firstItem="MLn-4o-ehC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="yLC-oq-BP5"/>
             </constraints>
             <point key="canvasLocation" x="6.8702290076335872" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
-        <image name="logoutIcon" width="593" height="706"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

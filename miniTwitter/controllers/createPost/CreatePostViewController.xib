@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePostViewController" customModule="miniTwitter" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="rbx-Rr-m5R" id="ydk-zU-R39"/>
+                <outlet property="imageView" destination="ezf-bA-VVC" id="hFx-lN-lae"/>
+                <outlet property="postButton" destination="JJD-vc-9HL" id="GE9-B0-MCS"/>
+                <outlet property="textView" destination="Vf8-CI-dgE" id="tjT-ne-8CO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-CI-dgE">
+                    <rect key="frame" x="20" y="119" width="353" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9cz-l0-ugk"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" systemColor="labelColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="7BQ-KX-bkX"/>
+                    </connections>
+                </textView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ezf-bA-VVC">
+                    <rect key="frame" x="20" y="245" width="353" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="GLs-5x-Yf8"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJD-vc-9HL" customClass="CustomButton" customModule="miniTwitter" customModuleProvider="target">
+                    <rect key="frame" x="20" y="746" width="353" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="abE-LA-yP7"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Post">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="postTapped:" destination="-1" eventType="touchUpInside" id="zwC-lO-UPl"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-Rr-m5R">
+                    <rect key="frame" x="186" y="435" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="color" systemColor="labelColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your message here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7c-ib-EvE">
+                    <rect key="frame" x="20" y="88" width="353" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ezf-bA-VVC" firstAttribute="top" secondItem="Vf8-CI-dgE" secondAttribute="bottom" constant="26" id="3gU-6v-btv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ezf-bA-VVC" secondAttribute="trailing" constant="20" id="Gdw-RM-aDC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f7c-ib-EvE" secondAttribute="trailing" constant="20" id="Ofy-Za-oge"/>
+                <constraint firstItem="JJD-vc-9HL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Pas-ab-YYt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JJD-vc-9HL" secondAttribute="bottom" constant="22" id="Yj2-AU-elw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JJD-vc-9HL" secondAttribute="trailing" constant="20" id="f6L-Vg-fSL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vf8-CI-dgE" secondAttribute="trailing" constant="20" id="fRV-N9-C5a"/>
+                <constraint firstItem="Vf8-CI-dgE" firstAttribute="top" secondItem="f7c-ib-EvE" secondAttribute="bottom" constant="10" id="gbC-r4-I4Q"/>
+                <constraint firstItem="ezf-bA-VVC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jqp-Sd-JFe"/>
+                <constraint firstItem="f7c-ib-EvE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="29" id="mkl-Ml-ma0"/>
+                <constraint firstItem="f7c-ib-EvE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vkQ-iC-zGh"/>
+                <constraint firstItem="Vf8-CI-dgE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="w82-Vq-RWC"/>
+            </constraints>
+            <point key="canvasLocation" x="3.8167938931297707" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder" width="372" height="280"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

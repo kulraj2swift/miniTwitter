@@ -12,14 +12,21 @@ class CustomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         borderColor = .twitterBlue
-        tintColor = .twitterBlue
+        tintColor = .white
         borderWidth = 3
+        backgroundColor = .twitterBlue
     }
     
     override open var isHighlighted: Bool {
         didSet {
-            tintColor = isHighlighted ? .white : .twitterBlue
-            backgroundColor = isHighlighted ? .twitterBlue : .white
+            tintColor = isHighlighted ? . twitterBlue : .white
+            backgroundColor = isHighlighted ? .white : .twitterBlue
+        }
+    }
+    
+    override var isUserInteractionEnabled: Bool {
+        didSet {
+            alpha = isUserInteractionEnabled ? 1 : 0.5
         }
     }
 }
