@@ -12,6 +12,8 @@ protocol FeedViewModelDelegate: AnyObject {
     func tweetsFetched()
     func failedToFetchTweets(error: Error)
     func failedToGetMyDetails(error: Error)
+    func tweetDeleted()
+    func failedToDeleteTweet(error: Error)
 }
 
 class FeedViewModel {
@@ -52,6 +54,23 @@ class FeedViewModel {
                 self?.tweetInfo = tweetInfo
                 self?.tweets = tweetInfo?.tweets ?? []
                 self?.delegate?.tweetsFetched()
+            }
+        })
+    }
+    
+    func deletePost(row: Int) {
+        if row >= tweets.count { return }
+        guard let tweetId = tweets[row].tweetId else { return }
+        apiManager?.deleteTweet(tweetId: tweetId, completion: { [weak self] success, error in
+            if let error = error {
+                self?.delegate?.failedToDeleteTweet(error: error)
+            } else if success {
+                self?.tweets.remove(at: row)
+                self?.tweetInfo?.tweets = self?.tweets ?? []
+                self?.delegate?.tweetDeleted()
+            } else {
+                let failureError = NSError(domain: "didnt get success in response", code: 200)
+                self?.delegate?.failedToDeleteTweet(error: failureError)
             }
         })
     }

@@ -37,6 +37,7 @@ class APIManager {
         static let data = "data"
         static let signatureMethod = "HMAC-SHA1"
         static let mediaIds = "media_ids"
+        static let deleted = "deleted"
     }
 
     private var environment = Environment.development
@@ -172,6 +173,30 @@ class APIManager {
                 }
             case .failure(let error):
                 completion(nil, error)
+            }
+        })
+    }
+    
+    func deleteTweet(tweetId: String, completion: @escaping(Bool, Error?) -> Void) {
+        let url = Constants.baseUrl + Constants.tweets + "/" + tweetId
+        oauth?.client.delete(url, completionHandler: { response in
+            switch response {
+            case .success(let result):
+                do {
+                    let json = try JSONSerialization.jsonObject(with: result.data, options: [])
+                    if let jsonDict = json as? [String: Any],
+                       let dict = jsonDict[Keys.data] as? [String: Any],
+                       let isDeleted = dict[Keys.deleted] as? Bool {
+                        completion(isDeleted, nil)
+                    } else {
+                        let parseError = NSError(domain: "parse error", code: 400)
+                        completion(false, parseError)
+                    }
+                } catch let jsonError {
+                    completion(false, jsonError)
+                }
+            case .failure(let error):
+                completion(false, error)
             }
         })
     }

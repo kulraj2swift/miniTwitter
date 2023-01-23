@@ -83,7 +83,23 @@ extension FeedViewController: UITableViewDataSource {
         let tweet = viewModel.tweets[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.tweetCellIdentifier, for: indexPath) as! FeedTableViewCell
         cell.tweet = tweet
+        cell.onDelete = { [weak self] in
+            self?.showAlertForDelete(tweetRow: indexPath.row)
+        }
         return cell
+    }
+    
+    func showAlertForDelete(tweetRow: Int) {
+        let alertController = UIAlertController(title: "Warning!", message: "This will delete the post. Do you want to proceed?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { [weak self] _ in
+            self?.dismiss(animated: true)
+        })
+        alertController.addAction(cancelAction)
+        let okAction = UIAlertAction(title: "Delete post", style: .destructive, handler: { [weak self] _ in self?.activityIndicator.startAnimating()
+            self?.viewModel?.deletePost(row: tweetRow)
+        })
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
 
@@ -94,6 +110,18 @@ extension FeedViewController: UITableViewDelegate {
 }
 
 extension FeedViewController: FeedViewModelDelegate {
+    
+    func tweetDeleted() {
+        activityIndicator.stopAnimating()
+        postsTable.reloadData()
+    }
+    
+    func failedToDeleteTweet(error: Error) {
+        UIAlertController.showAlert(title: "Failed to delete", controller: self)
+        activityIndicator.stopAnimating()
+        print(#function + " " + error.localizedDescription)
+    }
+    
     func tweetsFetched() {
         activityIndicator.stopAnimating()
         refreshControl.endRefreshing()

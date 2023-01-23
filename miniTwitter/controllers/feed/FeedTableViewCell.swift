@@ -9,13 +9,17 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
     
+    var onDelete: (() -> ())?
+    
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var mediaImage: UIImageView!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var deleteImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        deleteImageView.addTapGesture(target: self, selector: #selector(deleteTapped))
     }
     
     override func layoutSubviews() {
@@ -25,13 +29,7 @@ class FeedTableViewCell: UITableViewCell {
     
     var tweet: Tweet? {
         didSet {
-            if let text = tweet?.text,
-               text.count > 0 {
-                tweetTextLabel.text = text
-                tweetTextLabel.isHidden = false
-            } else {
-                tweetTextLabel.isHidden = true
-            }
+            tweetTextLabel.text = tweet?.text
             if let type = tweet?.media?.type,
                type == .photo {
                 let height = tweet?.media?.height ?? 0
@@ -45,6 +43,10 @@ class FeedTableViewCell: UITableViewCell {
             }
             
         }
+    }
+    
+    @objc func deleteTapped() {
+        onDelete?()
     }
     
 }
