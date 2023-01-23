@@ -37,6 +37,43 @@
 		2B53BE3B2979479000B43A7F /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B53BE392979479000B43A7F /* FeedViewController.xib */; };
 		2B53BE3D2979479E00B43A7F /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53BE3C2979479E00B43A7F /* FeedViewModel.swift */; };
 		2B53BE3F297950F300B43A7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53BE3E297950F300B43A7F /* BaseViewController.swift */; };
+		2B9FE7C0297D6A76003906E0 /* SwifterMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE799297D6A74003906E0 /* SwifterMessages.swift */; };
+		2B9FE7C1297D6A76003906E0 /* SwifterCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE79A297D6A74003906E0 /* SwifterCredential.swift */; };
+		2B9FE7C2297D6A76003906E0 /* Int++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE79B297D6A74003906E0 /* Int++.swift */; };
+		2B9FE7C3297D6A76003906E0 /* SwifterMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE79C297D6A74003906E0 /* SwifterMedia.swift */; };
+		2B9FE7C4297D6A76003906E0 /* SwifterFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE79D297D6A74003906E0 /* SwifterFollowers.swift */; };
+		2B9FE7C5297D6A76003906E0 /* SwifterSpam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE79E297D6A75003906E0 /* SwifterSpam.swift */; };
+		2B9FE7C7297D6A76003906E0 /* SwifterTimelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A0297D6A75003906E0 /* SwifterTimelines.swift */; };
+		2B9FE7C8297D6A76003906E0 /* SwifterHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A1297D6A75003906E0 /* SwifterHelp.swift */; };
+		2B9FE7C9297D6A76003906E0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A2297D6A75003906E0 /* Utils.swift */; };
+		2B9FE7CA297D6A76003906E0 /* Scanner++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A3297D6A75003906E0 /* Scanner++.swift */; };
+		2B9FE7CB297D6A76003906E0 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A4297D6A75003906E0 /* SHA1.swift */; };
+		2B9FE7CC297D6A76003906E0 /* SwifterTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A5297D6A75003906E0 /* SwifterTrends.swift */; };
+		2B9FE7CD297D6A76003906E0 /* SwifterTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A6297D6A75003906E0 /* SwifterTag.swift */; };
+		2B9FE7CE297D6A76003906E0 /* SwifterClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A7297D6A75003906E0 /* SwifterClientProtocol.swift */; };
+		2B9FE7CF297D6A76003906E0 /* SwifterOAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A8297D6A75003906E0 /* SwifterOAuthClient.swift */; };
+		2B9FE7D0297D6A76003906E0 /* Dictionary++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7A9297D6A75003906E0 /* Dictionary++.swift */; };
+		2B9FE7D1297D6A76003906E0 /* SwifterAppOnlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AA297D6A75003906E0 /* SwifterAppOnlyClient.swift */; };
+		2B9FE7D2297D6A76003906E0 /* SwifterUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AB297D6A75003906E0 /* SwifterUsers.swift */; };
+		2B9FE7D3297D6A76003906E0 /* SwifterAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AC297D6A75003906E0 /* SwifterAuth.swift */; };
+		2B9FE7D4297D6A76003906E0 /* Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AD297D6A75003906E0 /* Swifter.swift */; };
+		2B9FE7D5297D6A76003906E0 /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AE297D6A75003906E0 /* String++.swift */; };
+		2B9FE7D6297D6A76003906E0 /* Data++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7AF297D6A75003906E0 /* Data++.swift */; };
+		2B9FE7D7297D6A76003906E0 /* SwifterPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B0297D6A75003906E0 /* SwifterPlaces.swift */; };
+		2B9FE7D8297D6A76003906E0 /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B2297D6A75003906E0 /* HMAC.swift */; };
+		2B9FE7DA297D6A76003906E0 /* SwifterHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B4297D6A75003906E0 /* SwifterHTTPRequest.swift */; };
+		2B9FE7DB297D6A76003906E0 /* SwifterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B5297D6A75003906E0 /* SwifterFavorites.swift */; };
+		2B9FE7DC297D6A76003906E0 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B6297D6A75003906E0 /* JSON.swift */; };
+		2B9FE7DD297D6A76003906E0 /* SwifterAccountsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B7297D6A75003906E0 /* SwifterAccountsClient.swift */; };
+		2B9FE7DE297D6A76003906E0 /* SwifterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B8297D6A75003906E0 /* SwifterSearch.swift */; };
+		2B9FE7DF297D6A76003906E0 /* SwifterLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7B9297D6A75003906E0 /* SwifterLists.swift */; };
+		2B9FE7E0297D6A76003906E0 /* SwifterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BA297D6A75003906E0 /* SwifterError.swift */; };
+		2B9FE7E1297D6A76003906E0 /* Operator++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BB297D6A75003906E0 /* Operator++.swift */; };
+		2B9FE7E2297D6A76003906E0 /* SwifterTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BC297D6A75003906E0 /* SwifterTweets.swift */; };
+		2B9FE7E3297D6A76003906E0 /* SwifterSavedSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BD297D6A75003906E0 /* SwifterSavedSearches.swift */; };
+		2B9FE7E4297D6A76003906E0 /* SwifterSuggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BE297D6A76003906E0 /* SwifterSuggested.swift */; };
+		2B9FE7E5297D6A76003906E0 /* URL++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7BF297D6A76003906E0 /* URL++.swift */; };
+		2B9FE7E7297D70E4003906E0 /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9FE7E6297D70E4003906E0 /* UploadImage.swift */; };
 		2BFC012B297AA6BA005A64EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012A297AA6BA005A64EF /* User.swift */; };
 		2BFC012D297AB6EF005A64EF /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012C297AB6EF005A64EF /* Tweet.swift */; };
 		2BFC0130297AD298005A64EF /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC012E297AD298005A64EF /* FeedTableViewCell.swift */; };
@@ -101,6 +138,44 @@
 		2B53BE392979479000B43A7F /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 		2B53BE3C2979479E00B43A7F /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		2B53BE3E297950F300B43A7F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2B9FE799297D6A74003906E0 /* SwifterMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterMessages.swift; sourceTree = "<group>"; };
+		2B9FE79A297D6A74003906E0 /* SwifterCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterCredential.swift; sourceTree = "<group>"; };
+		2B9FE79B297D6A74003906E0 /* Int++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int++.swift"; sourceTree = "<group>"; };
+		2B9FE79C297D6A74003906E0 /* SwifterMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterMedia.swift; sourceTree = "<group>"; };
+		2B9FE79D297D6A74003906E0 /* SwifterFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterFollowers.swift; sourceTree = "<group>"; };
+		2B9FE79E297D6A75003906E0 /* SwifterSpam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSpam.swift; sourceTree = "<group>"; };
+		2B9FE7A0297D6A75003906E0 /* SwifterTimelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTimelines.swift; sourceTree = "<group>"; };
+		2B9FE7A1297D6A75003906E0 /* SwifterHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterHelp.swift; sourceTree = "<group>"; };
+		2B9FE7A2297D6A75003906E0 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2B9FE7A3297D6A75003906E0 /* Scanner++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scanner++.swift"; sourceTree = "<group>"; };
+		2B9FE7A4297D6A75003906E0 /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		2B9FE7A5297D6A75003906E0 /* SwifterTrends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTrends.swift; sourceTree = "<group>"; };
+		2B9FE7A6297D6A75003906E0 /* SwifterTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTag.swift; sourceTree = "<group>"; };
+		2B9FE7A7297D6A75003906E0 /* SwifterClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterClientProtocol.swift; sourceTree = "<group>"; };
+		2B9FE7A8297D6A75003906E0 /* SwifterOAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterOAuthClient.swift; sourceTree = "<group>"; };
+		2B9FE7A9297D6A75003906E0 /* Dictionary++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary++.swift"; sourceTree = "<group>"; };
+		2B9FE7AA297D6A75003906E0 /* SwifterAppOnlyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAppOnlyClient.swift; sourceTree = "<group>"; };
+		2B9FE7AB297D6A75003906E0 /* SwifterUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterUsers.swift; sourceTree = "<group>"; };
+		2B9FE7AC297D6A75003906E0 /* SwifterAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAuth.swift; sourceTree = "<group>"; };
+		2B9FE7AD297D6A75003906E0 /* Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifter.swift; sourceTree = "<group>"; };
+		2B9FE7AE297D6A75003906E0 /* String++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++.swift"; sourceTree = "<group>"; };
+		2B9FE7AF297D6A75003906E0 /* Data++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data++.swift"; sourceTree = "<group>"; };
+		2B9FE7B0297D6A75003906E0 /* SwifterPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterPlaces.swift; sourceTree = "<group>"; };
+		2B9FE7B1297D6A75003906E0 /* Swifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swifter.h; sourceTree = "<group>"; };
+		2B9FE7B2297D6A75003906E0 /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		2B9FE7B4297D6A75003906E0 /* SwifterHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterHTTPRequest.swift; sourceTree = "<group>"; };
+		2B9FE7B5297D6A75003906E0 /* SwifterFavorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterFavorites.swift; sourceTree = "<group>"; };
+		2B9FE7B6297D6A75003906E0 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		2B9FE7B7297D6A75003906E0 /* SwifterAccountsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAccountsClient.swift; sourceTree = "<group>"; };
+		2B9FE7B8297D6A75003906E0 /* SwifterSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSearch.swift; sourceTree = "<group>"; };
+		2B9FE7B9297D6A75003906E0 /* SwifterLists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterLists.swift; sourceTree = "<group>"; };
+		2B9FE7BA297D6A75003906E0 /* SwifterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterError.swift; sourceTree = "<group>"; };
+		2B9FE7BB297D6A75003906E0 /* Operator++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Operator++.swift"; sourceTree = "<group>"; };
+		2B9FE7BC297D6A75003906E0 /* SwifterTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTweets.swift; sourceTree = "<group>"; };
+		2B9FE7BD297D6A75003906E0 /* SwifterSavedSearches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSavedSearches.swift; sourceTree = "<group>"; };
+		2B9FE7BE297D6A76003906E0 /* SwifterSuggested.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSuggested.swift; sourceTree = "<group>"; };
+		2B9FE7BF297D6A76003906E0 /* URL++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL++.swift"; sourceTree = "<group>"; };
+		2B9FE7E6297D70E4003906E0 /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		2BFC012A297AA6BA005A64EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2BFC012C297AB6EF005A64EF /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		2BFC012E297AD298005A64EF /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +322,7 @@
 		2B53BE212978317A00B43A7F /* customClasses */ = {
 			isa = PBXGroup;
 			children = (
+				2B9FE798297D6A5E003906E0 /* thirdParty */,
 				2B53BE222978319E00B43A7F /* CustomButton.swift */,
 			);
 			path = customClasses;
@@ -276,11 +352,56 @@
 			path = feed;
 			sourceTree = "<group>";
 		};
+		2B9FE798297D6A5E003906E0 /* thirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2B9FE7AF297D6A75003906E0 /* Data++.swift */,
+				2B9FE7A9297D6A75003906E0 /* Dictionary++.swift */,
+				2B9FE7B2297D6A75003906E0 /* HMAC.swift */,
+				2B9FE79B297D6A74003906E0 /* Int++.swift */,
+				2B9FE7B6297D6A75003906E0 /* JSON.swift */,
+				2B9FE7BB297D6A75003906E0 /* Operator++.swift */,
+				2B9FE7A3297D6A75003906E0 /* Scanner++.swift */,
+				2B9FE7A4297D6A75003906E0 /* SHA1.swift */,
+				2B9FE7AE297D6A75003906E0 /* String++.swift */,
+				2B9FE7B1297D6A75003906E0 /* Swifter.h */,
+				2B9FE7AD297D6A75003906E0 /* Swifter.swift */,
+				2B9FE7B7297D6A75003906E0 /* SwifterAccountsClient.swift */,
+				2B9FE7AA297D6A75003906E0 /* SwifterAppOnlyClient.swift */,
+				2B9FE7AC297D6A75003906E0 /* SwifterAuth.swift */,
+				2B9FE7A7297D6A75003906E0 /* SwifterClientProtocol.swift */,
+				2B9FE79A297D6A74003906E0 /* SwifterCredential.swift */,
+				2B9FE7BA297D6A75003906E0 /* SwifterError.swift */,
+				2B9FE7B5297D6A75003906E0 /* SwifterFavorites.swift */,
+				2B9FE79D297D6A74003906E0 /* SwifterFollowers.swift */,
+				2B9FE7A1297D6A75003906E0 /* SwifterHelp.swift */,
+				2B9FE7B4297D6A75003906E0 /* SwifterHTTPRequest.swift */,
+				2B9FE7B9297D6A75003906E0 /* SwifterLists.swift */,
+				2B9FE79C297D6A74003906E0 /* SwifterMedia.swift */,
+				2B9FE799297D6A74003906E0 /* SwifterMessages.swift */,
+				2B9FE7A8297D6A75003906E0 /* SwifterOAuthClient.swift */,
+				2B9FE7B0297D6A75003906E0 /* SwifterPlaces.swift */,
+				2B9FE7BD297D6A75003906E0 /* SwifterSavedSearches.swift */,
+				2B9FE7B8297D6A75003906E0 /* SwifterSearch.swift */,
+				2B9FE79E297D6A75003906E0 /* SwifterSpam.swift */,
+				2B9FE7BE297D6A76003906E0 /* SwifterSuggested.swift */,
+				2B9FE7A6297D6A75003906E0 /* SwifterTag.swift */,
+				2B9FE7A0297D6A75003906E0 /* SwifterTimelines.swift */,
+				2B9FE7A5297D6A75003906E0 /* SwifterTrends.swift */,
+				2B9FE7BC297D6A75003906E0 /* SwifterTweets.swift */,
+				2B9FE7AB297D6A75003906E0 /* SwifterUsers.swift */,
+				2B9FE7BF297D6A76003906E0 /* URL++.swift */,
+				2B9FE7A2297D6A75003906E0 /* Utils.swift */,
+			);
+			path = thirdParty;
+			sourceTree = "<group>";
+		};
 		2BFC0129297AA6AA005A64EF /* models */ = {
 			isa = PBXGroup;
 			children = (
 				2BFC012A297AA6BA005A64EF /* User.swift */,
 				2BFC012C297AB6EF005A64EF /* Tweet.swift */,
+				2B9FE7E6297D70E4003906E0 /* UploadImage.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -552,31 +673,68 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B9FE7DB297D6A76003906E0 /* SwifterFavorites.swift in Sources */,
 				2B53BE202978312600B43A7F /* UIView+extension.swift in Sources */,
+				2B9FE7DD297D6A76003906E0 /* SwifterAccountsClient.swift in Sources */,
 				2B53BE3D2979479E00B43A7F /* FeedViewModel.swift in Sources */,
+				2B9FE7CE297D6A76003906E0 /* SwifterClientProtocol.swift in Sources */,
 				2B50725B297BCFF7004ACE1B /* CreatePostViewModel.swift in Sources */,
+				2B9FE7E2297D6A76003906E0 /* SwifterTweets.swift in Sources */,
 				2B53BE2A2978ED3400B43A7F /* ApiManager+enums.swift in Sources */,
+				2B9FE7E7297D70E4003906E0 /* UploadImage.swift in Sources */,
 				2B53BE2C2978EDDB00B43A7F /* ApiManager.swift in Sources */,
+				2B9FE7CD297D6A76003906E0 /* SwifterTag.swift in Sources */,
+				2B9FE7E1297D6A76003906E0 /* Operator++.swift in Sources */,
+				2B9FE7E3297D6A76003906E0 /* SwifterSavedSearches.swift in Sources */,
 				2B53BDE72977F36800B43A7F /* AppDelegate.swift in Sources */,
+				2B9FE7DA297D6A76003906E0 /* SwifterHTTPRequest.swift in Sources */,
+				2B9FE7CA297D6A76003906E0 /* Scanner++.swift in Sources */,
+				2B9FE7C0297D6A76003906E0 /* SwifterMessages.swift in Sources */,
 				2B50725D297BEB26004ACE1B /* String+extension.swift in Sources */,
 				2B53BE3F297950F300B43A7F /* BaseViewController.swift in Sources */,
+				2B9FE7D4297D6A76003906E0 /* Swifter.swift in Sources */,
+				2B9FE7C9297D6A76003906E0 /* Utils.swift in Sources */,
 				2B53BE232978319E00B43A7F /* CustomButton.swift in Sources */,
 				2B53BE34297942FC00B43A7F /* Data+extension.swift in Sources */,
+				2B9FE7D6297D6A76003906E0 /* Data++.swift in Sources */,
+				2B9FE7DE297D6A76003906E0 /* SwifterSearch.swift in Sources */,
 				2B507258297BC8A3004ACE1B /* CreatePostViewController.swift in Sources */,
+				2B9FE7D2297D6A76003906E0 /* SwifterUsers.swift in Sources */,
+				2B9FE7CB297D6A76003906E0 /* SHA1.swift in Sources */,
+				2B9FE7D1297D6A76003906E0 /* SwifterAppOnlyClient.swift in Sources */,
 				2B53BE3A2979479000B43A7F /* FeedViewController.swift in Sources */,
 				2B53BE2E2978F6C600B43A7F /* ApiManager+request.swift in Sources */,
+				2B9FE7C8297D6A76003906E0 /* SwifterHelp.swift in Sources */,
+				2B9FE7D0297D6A76003906E0 /* Dictionary++.swift in Sources */,
+				2B9FE7E4297D6A76003906E0 /* SwifterSuggested.swift in Sources */,
+				2B9FE7DC297D6A76003906E0 /* JSON.swift in Sources */,
 				2B53BE25297831D100B43A7F /* UIColor+extension.swift in Sources */,
+				2B9FE7D7297D6A76003906E0 /* SwifterPlaces.swift in Sources */,
 				2BFC012D297AB6EF005A64EF /* Tweet.swift in Sources */,
+				2B9FE7C1297D6A76003906E0 /* SwifterCredential.swift in Sources */,
+				2B9FE7D3297D6A76003906E0 /* SwifterAuth.swift in Sources */,
+				2B9FE7C3297D6A76003906E0 /* SwifterMedia.swift in Sources */,
+				2B9FE7DF297D6A76003906E0 /* SwifterLists.swift in Sources */,
+				2B9FE7CC297D6A76003906E0 /* SwifterTrends.swift in Sources */,
 				2B53BE36297945AA00B43A7F /* UiAlertController+extension.swift in Sources */,
 				2B53BE302979397200B43A7F /* HomeViewModel.swift in Sources */,
+				2B9FE7C2297D6A76003906E0 /* Int++.swift in Sources */,
 				2B53BE1F2978312600B43A7F /* UITextField+extension.swift in Sources */,
+				2B9FE7C4297D6A76003906E0 /* SwifterFollowers.swift in Sources */,
 				2B53BDE92977F36800B43A7F /* SceneDelegate.swift in Sources */,
 				2BFC0130297AD298005A64EF /* FeedTableViewCell.swift in Sources */,
+				2B9FE7C5297D6A76003906E0 /* SwifterSpam.swift in Sources */,
 				2B53BE272978EBF700B43A7F /* ApiKeys.swift in Sources */,
 				2B53BE1A2977F7A300B43A7F /* HomeViewController.swift in Sources */,
+				2B9FE7D5297D6A76003906E0 /* String++.swift in Sources */,
 				2B53BE322979420500B43A7F /* KeyChain.swift in Sources */,
 				2BFC0133297AE27E005A64EF /* UIImageView+extension.swift in Sources */,
+				2B9FE7E0297D6A76003906E0 /* SwifterError.swift in Sources */,
 				2BFC012B297AA6BA005A64EF /* User.swift in Sources */,
+				2B9FE7C7297D6A76003906E0 /* SwifterTimelines.swift in Sources */,
+				2B9FE7D8297D6A76003906E0 /* HMAC.swift in Sources */,
+				2B9FE7CF297D6A76003906E0 /* SwifterOAuthClient.swift in Sources */,
+				2B9FE7E5297D6A76003906E0 /* URL++.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

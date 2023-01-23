@@ -25,7 +25,13 @@ class FeedTableViewCell: UITableViewCell {
     
     var tweet: Tweet? {
         didSet {
-            tweetTextLabel.text = tweet?.text
+            if let text = tweet?.text,
+               text.count > 0 {
+                tweetTextLabel.text = text
+                tweetTextLabel.isHidden = false
+            } else {
+                tweetTextLabel.isHidden = true
+            }
             if let type = tweet?.media?.type,
                type == .photo {
                 let height = tweet?.media?.height ?? 0

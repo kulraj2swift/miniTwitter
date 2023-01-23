@@ -7,8 +7,6 @@
 
 import UIKit
 import PhotosUI
-//import TwitterKit
-//import TwitterCore
 
 class CreatePostViewController: BaseViewController {
     
@@ -34,6 +32,7 @@ class CreatePostViewController: BaseViewController {
         imageView.addTapGesture(target: self, selector: #selector(imageTapped))
         textView.text = ""
         createImagePicker()
+        viewModel?.initializeSwifter()
         navigationItem.title = "Create a post"
     }
     
@@ -88,34 +87,13 @@ class CreatePostViewController: BaseViewController {
     }
     
     @IBAction func postTapped(_ sender: Any) {
-//        activityIndicator.startAnimating()
-//        var rawData: Data?
-//        if isImagePicked {
-//            rawData = imageView.image?.jpegData(compressionQuality: 0.2)
-//        }
-//        let composer = TWTRComposer()
-//
-//        composer.setText(textView.text)
-//        if isImagePicked {
-//            composer.setImage(imageView.image)
-//        }
-//
-//        // Called from a UIViewController
-//        composer.show(from: self, completion: { [weak self] result in
-//            if result == .done {
-//                self?.postSuccessful()
-//            } else {
-//                print("Cancelled composing")
-//            }
-//        })
-        //viewModel?.post(message: textView.text.trim(), imageData: rawData)
+        activityIndicator.startAnimating()
+        var rawData: Data?
+        if isImagePicked {
+            rawData = imageView.image?.jpegData(compressionQuality: 0.2)
+        }
+        viewModel?.post(message: textView.text.trim(), imageData: rawData)
     }
-    
-    func postSuccessful() {
-        onSuccessfulPost?()
-        navigationController?.popViewController(animated: true)
-    }
-
 }
 
 extension CreatePostViewController: PHPickerViewControllerDelegate {
@@ -168,6 +146,7 @@ extension CreatePostViewController: UITextViewDelegate {
 }
 
 extension CreatePostViewController: CreatePostViewModelDelegate {
+    
     func postSuccess() {
         activityIndicator.stopAnimating()
         let alertController = UIAlertController(title: "Success", message: "post was created", preferredStyle: .alert)

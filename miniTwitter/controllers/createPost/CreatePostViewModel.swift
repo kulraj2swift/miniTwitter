@@ -16,7 +16,10 @@ class CreatePostViewModel {
     
     weak var delegate: CreatePostViewModelDelegate?
     var apiManager: APIManager?
-    var message: String?
+    
+    func initializeSwifter() {
+        apiManager?.initializeSwifter()
+    }
     
     func post(message: String?, imageData: Data?) {
         guard message != nil || imageData != nil else {
@@ -26,31 +29,36 @@ class CreatePostViewModel {
             return
         }
         if let imageData = imageData {
-            self.message = message
-            apiManager?.uploadImage(imageData: imageData, completion: { [weak self] result, error in
+            apiManager?.uploadImageWithSwifter(imageData: imageData, completion: { [weak self] result, error in
                 if let error = error {
                     self?.delegate?.failedToPost(error)
                 } else {
-                    self?.postImageWithMessage()
+                    self?.postTweetWithImage(result, message: message)
                 }
             })
-            return
+        } else {
+            apiManager?.postTweet(message: message, completion: { [weak self] tweet, error in
+                self?.callDelegates(tweet: tweet, error: error)
+            })
         }
-        apiManager?.postTweet(message: message, completion: { [weak self] tweet, error in
-            if tweet?.tweetId != nil {
-                //success
-                DispatchQueue.main.async { [weak self] in
-                    self?.delegate?.postSuccess()
-                }
-            } else if let error = error {
-                DispatchQueue.main.async { [weak self] in
-                    self?.delegate?.failedToPost(error)
-                }
-            }
+    }
+    
+    func postTweetWithImage(_ image: UploadImageResponse?, message: String?) {
+        apiManager?.postTweet(message: message, imageResponse: image, completion: { [weak self] tweet, error in
+            self?.callDelegates(tweet: tweet, error: error)
         })
     }
     
-    func postImageWithMessage() {
-        
+    func callDelegates(tweet: Tweet?, error: Error?) {
+        if tweet?.tweetId != nil {
+            //success
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.postSuccess()
+            }
+        } else if let error = error {
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.failedToPost(error)
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ class FeedViewController: BaseViewController {
     }
     
     var viewModel: FeedViewModel?
+    private let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var noPostsLabel: UILabel!
@@ -31,6 +32,21 @@ class FeedViewController: BaseViewController {
         navigationItem.title = "My Posts"
         hideAll()
         registerCells()
+        createRefreshView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        plusButton.dropShadow()
+    }
+    
+    func createRefreshView() {
+        postsTable.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    }
+    
+    @objc func refresh(_ sender: Any) {
+        viewModel?.getTimeline()
     }
     
     func registerCells() {
@@ -50,9 +66,6 @@ class FeedViewController: BaseViewController {
         let createPostViewModel = CreatePostViewModel()
         createPostViewModel.apiManager = viewModel?.apiManager
         createPostViewController.viewModel = createPostViewModel
-        createPostViewController.onSuccessfulPost = { [weak self] in
-            self?.viewModel?.getTimeline()
-        }
         navigationController?.pushViewController(createPostViewController, animated: true)
     }
 
@@ -83,6 +96,7 @@ extension FeedViewController: UITableViewDelegate {
 extension FeedViewController: FeedViewModelDelegate {
     func tweetsFetched() {
         activityIndicator.stopAnimating()
+        refreshControl.endRefreshing()
         refreshUi()
     }
     

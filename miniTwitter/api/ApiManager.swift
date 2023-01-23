@@ -36,10 +36,13 @@ class APIManager {
         static let media = "media"
         static let data = "data"
         static let signatureMethod = "HMAC-SHA1"
+        static let mediaIds = "media_ids"
     }
 
     private var environment = Environment.development
     private(set) var oauth: OAuth1Swift?
+    private(set) var swifter: Swifter?
+    private var keychain = KeychainSwift()
     
     init() {
         oauth = OAuth1Swift(
@@ -57,11 +60,23 @@ class APIManager {
             return //already initialized
         }
         let credential = OAuthSwiftCredential.init(consumerKey: ApiKeys.devApiKey, consumerSecret: ApiKeys.devApiSecret)
-        let keychain = KeychainSwift()
         credential.oauthToken = keychain.get(KeyChainKeys.accessToken) ?? ""
         credential.oauthTokenSecret = keychain.get(KeyChainKeys.accessTokenSecret) ?? ""
         let client = OAuthSwiftClient.init(credential: credential)
         oauth?.client = client
+    }
+    
+    func initializeSwifter() {
+        if swifter != nil {
+            return
+        }
+        guard let oauthToken = keychain.get(KeyChainKeys.accessToken) else {
+            return
+        }
+        guard let oauthSecret = keychain.get(KeyChainKeys.accessTokenSecret) else {
+            return
+        }
+        swifter = Swifter(consumerKey: ApiKeys.devApiKey, consumerSecret: ApiKeys.devApiSecret, oauthToken: oauthToken, oauthTokenSecret: oauthSecret)
     }
     
     func getMyIdAndUserName(completion: @escaping (User?, Error?) -> Void) {
@@ -117,6 +132,15 @@ class APIManager {
         })
     }
     
+    func uploadImageWithSwifter(imageData: Data, completion: @escaping(UploadImageResponse?, Error?) -> Void) {
+        swifter?.postMedia(imageData, success: { response in
+            let uploadResponse = UploadImageResponse(json: response.object)
+            completion(uploadResponse, nil)
+        }, failure: { error in
+            completion(nil, error)
+        })
+    }
+    
     func uploadImage(imageData: Data, completion: @escaping(Any?, Error?) -> Void) {
         var params: [String: String] = [:]
         params["media_category"] = "TWEET_IMAGE"
@@ -155,9 +179,6 @@ class APIManager {
         for (key, value) in headers {
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
-//        urlRequest.setValue(ApiKeys.devApiSecret, forHTTPHeaderField: RequestKeys.oauthConsumerSecret)
-//        let keychain = KeychainSwift()
-//        urlRequest.setValue(keychain.get(KeyChainKeys.accessTokenSecret), forHTTPHeaderField: RequestKeys.oauthSecret)
         
         var authorizationParameters = client.credential.authorizationParameters(data, timestamp: headers[RequestKeys.oauthTimestamp] ?? "", nonce: headers[RequestKeys.oauthNonce] ?? "") as? [String: String] ?? [:]
 
@@ -180,11 +201,15 @@ class APIManager {
             }).resume()
     }
     
-    func postTweet(message: String?, imageData: Data? = nil, completion: @escaping(Tweet?, Error?) -> Void) {
+    func postTweet(message: String?, imageResponse: UploadImageResponse? = nil, completion: @escaping(Tweet?, Error?) -> Void) {
         let url = Constants.baseUrl + Constants.tweets
         var params: [String: Any] = [:]
         if let message = message {
             params[Keys.text] = message
+        }
+        if let mediaId = imageResponse?.mediaIdString {
+            let mediaDict: [String: Any] = [Keys.mediaIds: [mediaId]]
+            params[Keys.media] = mediaDict
         }
         var headers: [String: String] = [:]
         headers["content-type"] = "application/json"
@@ -210,13 +235,4 @@ class APIManager {
             }
         })
     }
-    
-//    func multiPartRequest(url: URLConvertible, method: OAuthSwiftHTTPRequest.Method, parameters: OAuthSwift.Parameters, image: Data, completionHandler completion: OAuthSwiftHTTPRequest.CompletionHandler?) -> OAuthSwiftRequestHandle? {
-//        let multiparts = [ OAuthSwiftMultipartData(name: "media_data", data: image, fileName: "file", mimeType: "image/jpeg") ]
-//        guard let request = oauth?.client.makeMultiPartRequest(url, method: method, parameters: parameters, multiparts: multiparts) else {
-//            return nil
-//        }
-//        request.task?.resume()
-//        return request
-//    }
 }
