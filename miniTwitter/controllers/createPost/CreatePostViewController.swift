@@ -33,6 +33,11 @@ class CreatePostViewController: BaseViewController {
         createImagePicker()
         viewModel?.initializeSwifter()
         navigationItem.title = "Create a post"
+        textView.addToolbarWithDoneButton(target: self, selector: #selector(resignKeyboard))
+    }
+    
+    @objc func resignKeyboard() {
+        view.endEditing(true)
     }
     
     func showPicker() {
@@ -130,6 +135,7 @@ extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigatio
 }
 
 extension CreatePostViewController: UITextViewDelegate {
+    
     func textViewDidChange(_ textView: UITextView) {
         checkAndEnablePostButton()
     }

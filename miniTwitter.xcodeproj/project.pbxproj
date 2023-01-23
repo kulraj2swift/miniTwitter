@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1137AA85A12FBAB5FF8F2CEB /* Pods_miniTwitter_miniTwitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA6330CCBB895F0087FEDC2 /* Pods_miniTwitter_miniTwitterUITests.framework */; };
 		2B2E1DD0297E94B000E219FE /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E1DCF297E94B000E219FE /* ShadowView.swift */; };
+		2B2E1DD4297E970100E219FE /* UItextInput+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E1DD3297E970100E219FE /* UItextInput+extension.swift */; };
 		2B507258297BC8A3004ACE1B /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B507256297BC8A3004ACE1B /* CreatePostViewController.swift */; };
 		2B507259297BC8A3004ACE1B /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B507257297BC8A3004ACE1B /* CreatePostViewController.xib */; };
 		2B50725B297BCFF7004ACE1B /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50725A297BCFF7004ACE1B /* CreatePostViewModel.swift */; };
@@ -105,6 +106,7 @@
 		0047B5032D308519C4B7E069 /* Pods-miniTwitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniTwitter.debug.xcconfig"; path = "Target Support Files/Pods-miniTwitter/Pods-miniTwitter.debug.xcconfig"; sourceTree = "<group>"; };
 		104B6294472CAFB79D05BBF3 /* Pods_miniTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2E1DCF297E94B000E219FE /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		2B2E1DD3297E970100E219FE /* UItextInput+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextInput+extension.swift"; sourceTree = "<group>"; };
 		2B3D776B297D577C0065F074 /* OAuthSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3D776D297D577F0065F074 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B507256297BC8A3004ACE1B /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				2B53BE35297945AA00B43A7F /* UiAlertController+extension.swift */,
 				2BFC0132297AE27E005A64EF /* UIImageView+extension.swift */,
 				2B50725C297BEB26004ACE1B /* String+extension.swift */,
+				2B2E1DD3297E970100E219FE /* UItextInput+extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				2B9FE7DA297D6A76003906E0 /* SwifterHTTPRequest.swift in Sources */,
 				2B9FE7CA297D6A76003906E0 /* Scanner++.swift in Sources */,
 				2B9FE7C0297D6A76003906E0 /* SwifterMessages.swift in Sources */,
+				2B2E1DD4297E970100E219FE /* UItextInput+extension.swift in Sources */,
 				2B50725D297BEB26004ACE1B /* String+extension.swift in Sources */,
 				2B53BE3F297950F300B43A7F /* BaseViewController.swift in Sources */,
 				2B9FE7D4297D6A76003906E0 /* Swifter.swift in Sources */,
