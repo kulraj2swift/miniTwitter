@@ -141,66 +141,6 @@ class APIManager {
         })
     }
     
-    func uploadImage(imageData: Data, completion: @escaping(Any?, Error?) -> Void) {
-        var params: [String: String] = [:]
-        params["media_category"] = "TWEET_IMAGE"
-        let base64EncodedData = imageData.base64EncodedData()
-        
-        guard let url = URL(string: Constants.uploadMedia),
-            let client = oauth?.client else {
-            return
-        }
-
-        let boundary = "AS-boundary-\(arc4random())-\(arc4random())"
-
-        let session = URLSession.shared
-
-        // Set the URLRequest to POST and to the specified URL
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = Method.post.rawValue
-        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
-
-        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
-        // And the boundary is also set here
-        urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-
-        var data = Data()
-        let paramName = "media_data"
-        let fileName = "file"
-
-        // Add the image data to the raw http request data
-        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-        data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
-        data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
-        data.append(base64EncodedData)
-        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-        
-        let headers = getHeaders()
-        for (key, value) in headers {
-            urlRequest.setValue(value, forHTTPHeaderField: key)
-        }
-        
-        var authorizationParameters = client.credential.authorizationParameters(data, timestamp: headers[RequestKeys.oauthTimestamp] ?? "", nonce: headers[RequestKeys.oauthNonce] ?? "") as? [String: String] ?? [:]
-
-        authorizationParameters.merge(headers, uniquingKeysWith: {
-            (_, last) in last
-        })
-        
-        let signature = client.credential.signature(method: .POST, url: url, parameters: authorizationParameters)
-        urlRequest.setValue(signature, forHTTPHeaderField: RequestKeys.oauthSignature)
-        
-        session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
-                if error == nil {
-                    let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
-                    if let json = jsonData as? [String: Any] {
-                        print(json)
-                    }
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-            }).resume()
-    }
-    
     func postTweet(message: String?, imageResponse: UploadImageResponse? = nil, completion: @escaping(Tweet?, Error?) -> Void) {
         let url = Constants.baseUrl + Constants.tweets
         var params: [String: Any] = [:]

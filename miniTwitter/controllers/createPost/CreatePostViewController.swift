@@ -11,7 +11,6 @@ import PhotosUI
 class CreatePostViewController: BaseViewController {
     
     var viewModel: CreatePostViewModel?
-    var onSuccessfulPost: (() -> ())?
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
@@ -152,7 +151,6 @@ extension CreatePostViewController: CreatePostViewModelDelegate {
         let alertController = UIAlertController(title: "Success", message: "post was created", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
             self?.dismiss(animated: true, completion: { [weak self] in
-                self?.onSuccessfulPost?()
                 self?.navigationController?.popViewController(animated: true)
             })
         })
