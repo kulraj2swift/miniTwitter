@@ -102,16 +102,19 @@ struct Meta {
         static let newestId = "newest_id"
         static let oldestId = "oldest_id"
         static let resultCount = "result_count"
+        static let nextToken = "next_token"
     }
         
     var newestId: String?
     var oldestId: String?
     var resultCount: Int?
+    var nextToken: String?
     
     init(dict: [String: Any]) {
         newestId = dict[Keys.newestId] as? String
         oldestId = dict[Keys.oldestId] as? String
         resultCount = dict[Keys.resultCount] as? Int
+        nextToken = dict[Keys.nextToken] as? String
     }
 }
 

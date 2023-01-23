@@ -107,13 +107,24 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {
+            return
+        }
+        if indexPath.row == viewModel.tweets.count - 1,
+           viewModel.canDisplayMoreTweets() {
+            activityIndicator.startAnimating()
+            viewModel.getTimeline(shouldFetchMore: true)
+        }
+    }
 }
 
 extension FeedViewController: FeedViewModelDelegate {
     
     func tweetDeleted() {
         activityIndicator.stopAnimating()
-        postsTable.reloadData()
+        refreshUi()
     }
     
     func failedToDeleteTweet(error: Error) {

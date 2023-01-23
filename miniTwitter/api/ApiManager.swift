@@ -38,6 +38,7 @@ class APIManager {
         static let signatureMethod = "HMAC-SHA1"
         static let mediaIds = "media_ids"
         static let deleted = "deleted"
+        static let paginationToken = "pagination_token"
     }
 
     private var environment = Environment.development
@@ -103,14 +104,16 @@ class APIManager {
         })
     }
     
-    func getTimeline(user: User, maxResults: Int, completion: @escaping (TweetInfo?, Error?) -> Void) {
+    func getTimeline(user: User, maxResults: Int, nextToken: String? = nil, completion: @escaping (TweetInfo?, Error?) -> Void) {
         let userId = user.userId ?? ""
-        //let url = Constants.baseUrl + Constants.users + "/" + userId + Constants.timelines
         let url = Constants.baseUrl + "/2/users/" + userId + "/tweets"
         var params: [String: Any] = [:]
         params[Keys.maxResults] = maxResults
         params[Keys.expansions] = Keys.mediaKeys
         params[Keys.mediaFields] = Keys.mediaKey + "," + Keys.height + "," + Keys.url + "," + Keys.type
+        if let nextToken = nextToken {
+            params[Keys.paginationToken] = nextToken
+        }
         
         oauth?.client.get(url,parameters: params, completionHandler: { result in
             switch result {

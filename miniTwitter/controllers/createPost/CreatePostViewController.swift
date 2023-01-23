@@ -101,6 +101,8 @@ class CreatePostViewController: BaseViewController {
 }
 
 extension CreatePostViewController: PHPickerViewControllerDelegate {
+    
+    //red flower(aka hana) cant be picked on phpicker from simulator. known issue with apple.
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         guard let result = results.first else { return }

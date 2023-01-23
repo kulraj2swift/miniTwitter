@@ -24,7 +24,7 @@ class FeedViewModel {
     var user: User?
     var tweetInfo: TweetInfo?
     var tweets: [Tweet] = []
-    let maxResults = 20
+    let maxResults = 5
     
     func initializeClient() {
         apiManager?.initializeClient()
@@ -41,18 +41,28 @@ class FeedViewModel {
         })
     }
     
-    func getTimeline() {
+    func getTimeline(shouldFetchMore: Bool = false) {
         guard let user = user else {
             let error = NSError(domain: "user not initialized", code: 200)
             delegate?.failedToFetchTweets(error: error)
             return
         }
-        apiManager?.getTimeline(user: user, maxResults: maxResults, completion: { [weak self] tweetInfo, error in
+        var nextToken: String?
+        if shouldFetchMore {
+            nextToken = tweetInfo?.meta?.nextToken
+        }
+        apiManager?.getTimeline(user: user, maxResults: maxResults, nextToken: nextToken, completion: { [weak self] tweetInfo, error in
             if let error = error {
                 self?.delegate?.failedToFetchTweets(error: error)
             } else {
                 self?.tweetInfo = tweetInfo
-                self?.tweets = tweetInfo?.tweets ?? []
+                if let olderTweets = tweetInfo?.tweets {
+                    if shouldFetchMore {
+                        self?.tweets.append(contentsOf: olderTweets)
+                    } else {
+                        self?.tweets = olderTweets
+                    }
+                }
                 self?.delegate?.tweetsFetched()
             }
         })
@@ -73,5 +83,12 @@ class FeedViewModel {
                 self?.delegate?.failedToDeleteTweet(error: failureError)
             }
         })
+    }
+    
+    func canDisplayMoreTweets() -> Bool {
+        if tweetInfo?.meta?.nextToken != nil {
+            return true
+        }
+        return false
     }
 }
