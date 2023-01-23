@@ -47,13 +47,18 @@ extension UIView {
         addGestureRecognizer(tapGesture)
     }
     
-    func dropShadow() {
+    func dropShadow(width: CGFloat = 0) {
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 1, height: 2)
+        layer.shadowOffset = CGSize(width: 1, height: 1)
         layer.shadowRadius = cornerRadius
-        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        var viewWidth = width
+        if width == 0 {
+            viewWidth = bounds.width
+        }
+        let rect = CGRect(x: 0, y: 0, width: viewWidth, height: bounds.height)
+        layer.shadowPath = UIBezierPath(rect: rect).cgPath
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
     }

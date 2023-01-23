@@ -10,6 +10,7 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
     
     var onDelete: (() -> ())?
+    let padding: CGFloat = 16
     
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var tweetTextLabel: UILabel!
@@ -20,11 +21,7 @@ class FeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         deleteImageView.addTapGesture(target: self, selector: #selector(deleteTapped))
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        innerView.dropShadow()
+        
     }
     
     var tweet: Tweet? {
@@ -41,7 +38,6 @@ class FeedTableViewCell: UITableViewCell {
             } else {
                 mediaImage.isHidden = true
             }
-            
         }
     }
     
