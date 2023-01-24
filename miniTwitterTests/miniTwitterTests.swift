@@ -2,7 +2,7 @@
 //  miniTwitterTests.swift
 //  miniTwitterTests
 //
-//  Created by kulraj singh on 18/01/23.
+//  Created by kulraj singh on 24/01/23.
 //
 
 import XCTest
@@ -28,7 +28,7 @@ final class miniTwitterTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

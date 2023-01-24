@@ -8,10 +8,13 @@
 import Foundation
 import OAuthSwift
 import KeychainSwift
+
 protocol HomeViewModelDelegate: AnyObject {
     func accessTokenFetched()
     func failedToFetchAccessToken(error: Error)
 }
+
+//third party dependency are there so cannot write unit test for this class
 
 class HomeViewModel {
     
@@ -38,20 +41,7 @@ class HomeViewModel {
         keyChain.set(credential.oauthVerifier, forKey: KeyChainKeys.accessTokenVerifier)
         
         DispatchQueue.main.async { [weak self] in
-            
             self?.delegate?.accessTokenFetched()
-            
-//            let isTokenSaved = KeyChain.save(key: KeyChainKeys.accessToken, data: Data.init(value: credential.oauthToken))
-//            let isSecretSaved = KeyChain.save(key: KeyChainKeys.accessTokenSecret, data: Data.init(value: credential.oauthTokenSecret))
-//            let isVerifierSaved = KeyChain.save(key: KeyChainKeys.accessTokenVerifier, data: Data.init(value: credential.oauthVerifier))
-//            if isTokenSaved == noErr,
-//               isSecretSaved == noErr,
-//               isVerifierSaved == noErr {
-//                self?.delegate?.accessTokenFetched()
-//            } else {
-//                let saveError = NSError(domain: "error in saving to keychain", code: 200)
-//                self?.delegate?.failedToFetchAccessToken(error: saveError)
-//            }
         }
     }
 }
