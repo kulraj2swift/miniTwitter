@@ -24,4 +24,9 @@ class ApiManagerFailure: APIManager {
         let error = NSError(domain: "some error", code: 500)
         completion(false, error)
     }
+    
+    override func uploadImageWithSwifter(imageData: Data, completion: @escaping (UploadImageResponse?, Error?) -> Void) {
+        let error = NSError(domain: "some error", code: 500)
+        completion(nil, error)
+    }
 }
