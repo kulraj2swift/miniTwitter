@@ -37,7 +37,7 @@
 		2B75FEC6297FC415002A0C4D /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75FEB6297FBFE8002A0C4D /* FeedViewModelTests.swift */; };
 		2B75FEC7297FC419002A0C4D /* ApiManagerSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75FEB2297FBE80002A0C4D /* ApiManagerSuccess.swift */; };
 		2B75FEC8297FC41C002A0C4D /* ApiManagerFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75FEB4297FBE91002A0C4D /* ApiManagerFailure.swift */; };
-		2B95A4A729807547003C57D7 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95A4A629807547003C57D7 /* ApiKeys.swift */; };
+		2B8643EA298080B500DAA187 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8643E9298080B500DAA187 /* ApiKeys.swift */; };
 		2B95A4A829807634003C57D7 /* miniTwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53BE072977F36900B43A7F /* miniTwitterUITests.swift */; };
 		2B9CA488297FCF850078EB69 /* ApiManagerSuccessOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CA487297FCF850078EB69 /* ApiManagerSuccessOne.swift */; };
 		2B9CA48A297FFAD30078EB69 /* CreatePostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9CA489297FFAD30078EB69 /* CreatePostViewModelTests.swift */; };
@@ -147,7 +147,7 @@
 		2B75FEB4297FBE91002A0C4D /* ApiManagerFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerFailure.swift; sourceTree = "<group>"; };
 		2B75FEB6297FBFE8002A0C4D /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		2B75FEBC297FC3CA002A0C4D /* miniTwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniTwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B95A4A629807547003C57D7 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		2B8643E9298080B500DAA187 /* ApiKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		2B9CA487297FCF850078EB69 /* ApiManagerSuccessOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerSuccessOne.swift; sourceTree = "<group>"; };
 		2B9CA489297FFAD30078EB69 /* CreatePostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModelTests.swift; sourceTree = "<group>"; };
 		2B9FE799297D6A74003906E0 /* SwifterMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterMessages.swift; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 		2B53BE282978ED0C00B43A7F /* api */ = {
 			isa = PBXGroup;
 			children = (
-				2B95A4A629807547003C57D7 /* ApiKeys.swift */,
+				2B8643E9298080B500DAA187 /* ApiKeys.swift */,
 				2B53BE2B2978EDDB00B43A7F /* ApiManager.swift */,
 				2B53BE2D2978F6C600B43A7F /* ApiManager+request.swift */,
 				2B53BE292978ED3400B43A7F /* ApiManager+enums.swift */,
@@ -731,7 +731,7 @@
 				2B9FE7D2297D6A76003906E0 /* SwifterUsers.swift in Sources */,
 				2B2E1DD0297E94B000E219FE /* ShadowView.swift in Sources */,
 				2B9FE7CB297D6A76003906E0 /* SHA1.swift in Sources */,
-				2B95A4A729807547003C57D7 /* ApiKeys.swift in Sources */,
+				2B8643EA298080B500DAA187 /* ApiKeys.swift in Sources */,
 				2B9FE7D1297D6A76003906E0 /* SwifterAppOnlyClient.swift in Sources */,
 				2B53BE3A2979479000B43A7F /* FeedViewController.swift in Sources */,
 				2B53BE2E2978F6C600B43A7F /* ApiManager+request.swift in Sources */,

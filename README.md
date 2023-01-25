@@ -3,7 +3,7 @@
 How to run:
 1) Take clone from github
 2) do pod install
-3) add the file ApiKeys.swift to your project. This contains the consumer client secret and client api key. This file is added to gitignore so its not on github which is public. I did not want to make my api key and secret public on github.
+3) add the file ApiKeys.swift to your project. This contains the consumer client secret and client api key. This file is added to gitignore so its not on github which is public. I did not want to make my api key and secret public on github. Be sure to remove the duplicate reference of apikeys when you add it manually.
 4) should be able to run now. In case the app relaunch takes too long just quit the simulator and run again
 
 Functionality:
