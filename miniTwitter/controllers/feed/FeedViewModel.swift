@@ -20,7 +20,7 @@ class FeedViewModel {
     
     weak var delegate: FeedViewModelDelegate?
     
-    var apiManager: APIManager?
+    var apiManager: ApiTestable?
     var user: User?
     var tweetInfo: TweetInfo?
     var tweets: [Tweet] = []

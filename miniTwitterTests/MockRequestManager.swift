@@ -92,4 +92,3 @@ class FeedViewModelTests: XCTestCase {
     }
 
 }
-
