@@ -9,6 +9,17 @@ import Foundation
 import KeychainSwift
 import OAuthSwift
 
+protocol ApiTestable: AnyObject {
+    
+    func initializeClient()
+    func getMyIdAndUserName(completion: @escaping (User?, Error?) -> Void)
+    func getTimeline(user: User, maxResults: Int, nextToken: String?, completion: @escaping (TweetInfo?, Error?) -> Void)
+    func deleteTweet(tweetId: String, completion: @escaping(Bool, Error?) -> Void)
+    func uploadImageWithSwifter(imageData: Data, completion: @escaping(UploadImageResponse?, Error?) -> Void)
+    func postTweet(message: String?, imageResponse: UploadImageResponse?, completion: @escaping(Tweet?, Error?) -> Void)
+    func initializeSwifter()
+}
+
 class APIManager {
     
     private struct Constants {

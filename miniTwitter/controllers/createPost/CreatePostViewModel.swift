@@ -15,7 +15,7 @@ protocol CreatePostViewModelDelegate: AnyObject {
 class CreatePostViewModel {
     
     weak var delegate: CreatePostViewModelDelegate?
-    var apiManager: APIManager?
+    var apiManager: ApiTestable?
     
     func initializeSwifter() {
         apiManager?.initializeSwifter()
@@ -37,7 +37,7 @@ class CreatePostViewModel {
                 }
             })
         } else {
-            apiManager?.postTweet(message: message, completion: { [weak self] tweet, error in
+            apiManager?.postTweet(message: message, imageResponse: nil, completion: { [weak self] tweet, error in
                 self?.callDelegates(tweet: tweet, error: error)
             })
         }

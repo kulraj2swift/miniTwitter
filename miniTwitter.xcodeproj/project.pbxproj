@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B2E1DD0297E94B000E219FE /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E1DCF297E94B000E219FE /* ShadowView.swift */; };
 		2B2E1DD4297E970100E219FE /* UItextInput+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E1DD3297E970100E219FE /* UItextInput+extension.swift */; };
+		2B3A6A342D84AC7400D72786 /* MockRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A6A332D84AC7400D72786 /* MockRequestManager.swift */; };
 		2B507258297BC8A3004ACE1B /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B507256297BC8A3004ACE1B /* CreatePostViewController.swift */; };
 		2B507259297BC8A3004ACE1B /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B507257297BC8A3004ACE1B /* CreatePostViewController.xib */; };
 		2B50725B297BCFF7004ACE1B /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B50725A297BCFF7004ACE1B /* CreatePostViewModel.swift */; };
@@ -111,6 +112,7 @@
 		104B6294472CAFB79D05BBF3 /* Pods_miniTwitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniTwitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2E1DCF297E94B000E219FE /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		2B2E1DD3297E970100E219FE /* UItextInput+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextInput+extension.swift"; sourceTree = "<group>"; };
+		2B3A6A332D84AC7400D72786 /* MockRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestManager.swift; sourceTree = "<group>"; };
 		2B3D776B297D577C0065F074 /* OAuthSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3D776D297D577F0065F074 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B507256297BC8A3004ACE1B /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				2B53BDFD2977F36900B43A7F /* miniTwitterTests.swift */,
 				2B75FEB6297FBFE8002A0C4D /* FeedViewModelTests.swift */,
 				2B9CA489297FFAD30078EB69 /* CreatePostViewModelTests.swift */,
+				2B3A6A332D84AC7400D72786 /* MockRequestManager.swift */,
 				2B75FEB1297FBDEE002A0C4D /* apiManager */,
 			);
 			path = miniTwitterTests;
@@ -773,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B75FEC7297FC419002A0C4D /* ApiManagerSuccess.swift in Sources */,
+				2B3A6A342D84AC7400D72786 /* MockRequestManager.swift in Sources */,
 				2B75FEC6297FC415002A0C4D /* FeedViewModelTests.swift in Sources */,
 				2B9CA488297FCF850078EB69 /* ApiManagerSuccessOne.swift in Sources */,
 				2B9CA48A297FFAD30078EB69 /* CreatePostViewModelTests.swift in Sources */,
